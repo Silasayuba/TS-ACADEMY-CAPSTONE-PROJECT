@@ -185,8 +185,8 @@ Repository Structure
 ```
 Customer-Churn-Prediction
 │
-├── Notebook
-├── Dataset
+├── DATASET
+├── PROJECT
 ├── README.md
 ```
 
