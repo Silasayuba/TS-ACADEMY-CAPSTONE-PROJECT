@@ -191,18 +191,3 @@ Customer-Churn-Prediction
 ```
 
 ---
-
-Future Improvements
-
-Possible improvements for this project include:
-
-1. Testing additional machine learning models such as:
-
-  * Random Forest
-  * Gradient Boosting
-  * XGBoost
-2. Hyperparameter tuning
-3. Handling class imbalance
-4. Deploying the model as a predictive API
-
----
