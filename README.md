@@ -1,193 +1,233 @@
-Customer Churn Prediction (Telco Dataset)
+# TS Academy Capstone Project
 
-Project Overview
+## Project Overview
 
-Customer churn prediction is a critical task for companies that rely on subscription-based services. Retaining existing customers is often more cost-effective than acquiring new ones, making churn analysis an important area of business analytics.
+This project was completed as part of the TS Academy training program and demonstrates the application of data analysis and machine learning techniques to solve a real-world problem. The goal of the project is to analyze a dataset, extract meaningful insights, and build predictive models that support data-driven decision making.
 
-This project applies "supervised machine learning techniques" to predict whether a telecom customer is likely to churn based on demographic information, service usage, and account-related features.
-
-The objective is to identify patterns associated with customer churn and build a predictive model capable of identifying customers at risk of leaving the service.
+The project follows a standard data science workflow including data preprocessing, exploratory data analysis (EDA), feature engineering, model training, and performance evaluation.
 
 ---
 
-Dataset
+## Problem Statement
 
-The dataset used in this project is the "Telco Customer Churn dataset", which contains information about customers of a telecommunications company.
+Organizations generate large volumes of data that can be leveraged to uncover patterns, predict outcomes, and improve strategic decision making. However, raw data is often messy and unstructured.
 
-Features in the Dataset
+This project aims to:
 
-The dataset includes several types of variables:
-
-Customer Demographics
-
-1. Gender
-2. Senior Citizen status
-3. Partner
-4. Dependents
-
-Service Information
-
-1. Phone service
-2. Internet service
-3. Online security
-4. Online backup
-5. Device protection
-6. Streaming TV
-7. Streaming movies
-
-Account Information
-
-1. Contract type
-2. Payment method
-3. Monthly charges
-4. Total charges
-5. Tenure
-
-Target Variable
-
-`Churn`
-
-`Yes → Customer left the company`
-
-`No → Customer stayed`
+* Clean and prepare raw data for analysis
+* Explore patterns and relationships in the dataset
+* Build predictive machine learning models
+* Evaluate model performance using appropriate metrics
+* Generate insights that can support business or operational decisions
 
 ---
 
-Project Workflow
+## Dataset
 
-The project follows a structured "machine learning workflow".
+The dataset used in this project contains structured information relevant to the problem domain. It includes multiple variables that influence the target outcome.
 
-Data Preparation and Cleaning
+Typical dataset characteristics include:
 
-Initial preprocessing steps included:
+* Numerical and categorical variables
+* Potential missing values
+* Features requiring preprocessing and transformation
 
-1. Loading the dataset using **Pandas**
-2. Inspecting data structure and data types
-3. Handling missing or inconsistent values
-4. Preparing features for modeling
+Data preprocessing steps performed include:
 
----
-
-Exploratory Data Analysis (EDA)
-
-Exploratory data analysis was performed to understand patterns within the dataset.
-
-Univariate Analysis (Numeric Variables)
-
-Numeric variables such as:
-
-1. Tenure
-2. Monthly Charges
-3. Total Charges
-
-were analyzed to understand their distributions.
-
-Visualization techniques included:
-
-1. Histograms
-2. Distribution plots
+* Handling missing values
+* Encoding categorical variables
+* Feature scaling and normalization where necessary
+* Removing duplicates and inconsistent records
 
 ---
 
-Univariate Analysis (Categorical Variables)
+## Project Workflow
 
-Categorical variables such as:
+### 1. Data Collection
 
-1. Gender
-2. Contract Type
-3. Payment Method
-4. Internet Service
+The dataset was obtained and stored in the `data/raw` directory.
 
-were analyzed using "count plots" to observe the frequency distribution of each category.
+### 2. Data Cleaning
 
-These analyses helped identify potential relationships between customer characteristics and churn behavior.
+Data cleaning involved:
 
----
+* Handling missing values
+* Removing duplicates
+* Formatting data types
+* Addressing inconsistent entries
 
-Feature Engineering and Preprocessing
+### 3. Exploratory Data Analysis (EDA)
 
-To prepare the dataset for machine learning, preprocessing techniques were applied:
+EDA was performed to understand patterns and relationships within the dataset. Key techniques included:
 
-Column Transformer
+* Distribution analysis
+* Correlation analysis
+* Data visualization
 
-A "ColumnTransformer" was used to apply different transformations to numeric and categorical features.
+Example visualizations include:
 
-Scaling
-
-Numeric features were scaled using "StandardScaler" to normalize feature ranges.
-
-Encoding
-
-Categorical variables were converted into numerical form using "One-Hot Encoding".
+* Feature distributions
+* Correlation heatmaps
+* Target variable relationships
 
 ---
 
-Model Development
+### 4. Feature Engineering
 
-A "Logistic Regression classifier" was used as the baseline model.
+New features were created to improve model performance and better represent the underlying data relationships.
 
-The model was implemented using a **Scikit-learn Pipeline**, which combines preprocessing and model training into a single workflow.
+Feature engineering steps included:
 
-Pipeline Components
-
-1. Data preprocessing
-2. Feature scaling and encoding
-3. Logistic Regression model
-
-Using pipelines improves reproducibility and ensures consistent preprocessing during training and evaluation.
+* Encoding categorical variables
+* Feature transformation
+* Selecting the most relevant predictors
 
 ---
 
-Model Evaluation
+### 5. Model Development
 
-The dataset was split into "training and testing sets" using `train_test_split`.
+Multiple machine learning models were tested to identify the best performing algorithm.
 
-The model's performance was evaluated using standard classification metrics:
+Example models evaluated include:
 
-1. Accuracy – Overall correctness of the model
-2. Precision – Correct positive predictions
-3. Recall – Ability to detect churn cases
-4. F1 Score – Balance between precision and recall
-5. Confusion Matrix – Detailed classification results
+* Logistic Regression
+* Random Forest
+* Decision Tree
 
-These metrics provide insight into the model's ability to correctly identify customers likely to churn.
+Each model was trained using the training dataset and evaluated on a separate test dataset.
 
 ---
 
-Key Insights
+### 6. Model Evaluation
 
-Exploratory analysis and modeling revealed that several factors influence churn behavior, including:
+Model performance was assessed using common classification metrics such as:
 
-1. Customer tenure
-2. Monthly charges
-3. Contract type
-4. Payment method
-5. Internet service features
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* Confusion Matrix
 
-Understanding these relationships allows businesses to design targeted customer retention strategies.
-
----
-
-Technologies Used
-
-1. Python
-2. Pandas
-3. NumPy
-4. Matplotlib
-5. Seaborn
-6. Scikit-learn
-7. Jupyter Notebook / Google Colab
+These metrics provide a comprehensive evaluation of how well the model generalizes to unseen data.
 
 ---
 
-Repository Structure
+## Results
+
+The models demonstrated varying performance levels depending on their ability to capture patterns within the dataset. After evaluation, the best performing model was selected based on overall accuracy and balanced performance across other metrics.
+
+Key observations:
+
+* Certain features had a stronger influence on predictions
+* Feature engineering significantly improved model performance
+* Ensemble methods generally produced more stable results
+
+---
+
+## Repository Structure
 
 ```
-Customer-Churn-Prediction
+TS-ACADEMY-CAPSTONE-PROJECT
 │
-├── DATASET
-├── PROJECT
-├── README.md
+├── data
+│   ├── raw
+│   └── processed
+│
+├── notebooks
+│   └── analysis.ipynb
+│
+├── src
+│   ├── data_preprocessing.py
+│   ├── train_model.py
+│   └── evaluate_model.py
+│
+├── models
+│   └── trained_model.pkl
+│
+├── images
+│   └── visualizations
+│
+├── requirements.txt
+└── README.md
 ```
 
 ---
+
+## Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
+* Jupyter Notebook
+
+These tools were used for data manipulation, visualization, machine learning model development, and evaluation.
+
+---
+
+## How to Run the Project
+
+### 1. Clone the repository
+
+```
+git clone https://github.com/Opsydee/TS-ACADEMY-CAPSTONE-PROJECT.git
+```
+
+### 2. Navigate to the project directory
+
+```
+cd TS-ACADEMY-CAPSTONE-PROJECT
+```
+
+### 3. Install dependencies
+
+```
+pip install -r requirements.txt
+```
+
+### 4. Launch Jupyter Notebook
+
+```
+jupyter notebook
+```
+
+Open the notebook located in the `notebooks` folder to explore the analysis and model development process.
+
+---
+
+## Key Insights
+
+Some important insights derived from the analysis include:
+
+* Certain variables show strong correlation with the target variable.
+* Proper preprocessing significantly improves model performance.
+* Ensemble machine learning models tend to outperform simpler models on this dataset.
+
+These insights highlight the importance of careful data preparation and model selection.
+
+---
+
+## Future Improvements
+
+Potential enhancements for this project include:
+
+* Hyperparameter tuning to improve model accuracy
+* Implementing additional machine learning algorithms
+* Deploying the trained model as a web application or API
+* Integrating real-time data for continuous model updates
+
+---
+
+## Author
+
+Silas Ayuba
+
+Certified Data Scientist with interests in machine learning, data analysis, and predictive modeling.
+
+---
+
+## License
+
+This project is intended for educational and portfolio purposes.
